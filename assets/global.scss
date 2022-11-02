@@ -29,6 +29,7 @@ a{
 
 .inner-width{
     width: 1300px;
+    height: auto;
     margin: auto;
 
     @media screen {
@@ -39,3 +40,63 @@ a{
 .light-blue{
     color: $LightBlue;
 }
+
+.section-title{
+    display: flex;
+    padding: 30px;
+    box-sizing: border-box;
+    .section-bar{
+      display: flex;
+      border: 1px solid black;
+      border-radius: 20px;
+      margin-left: 20px;
+      li{
+        font-weight: 700;
+        padding: 5px 25px;
+      }
+    }
+  }
+
+
+  .movie-box{
+    height: 385px;
+    display: flex;
+    overflow-x: scroll;
+    .movie-box::-webkit-scrollbar {
+      width: 10px;
+    }
+    .movie-box::-webkit-scrollbar-track {
+      background: rgba(33, 122, 244, .1);
+    }
+    .movie-box::-webkit-scrollbar-thumb {
+      height: 30%;
+      background: #217af4; 
+      border-radius: 10px;
+    }
+    .movie{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 0 10px;
+      .poster{
+  
+        img{
+          width: 140px;
+          border: none;
+        border-radius: 7px;
+        }
+      }
+      .movie-info{
+        .title{
+          font-weight: 700;
+          font-size: 15px;
+        }
+        .release{
+          font-weight: 300;
+          font-size: 14px;
+          color: gray;
+        }
+      }
+    }
+  }
