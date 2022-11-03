@@ -7,7 +7,7 @@
             <li>스트리밍</li>
             <li>TV</li>
             <li>대여</li>
-            <li>극장</li>
+            <li class="choice">극장</li>
           </ul>
         </div>
         <div class="movie-box">

@@ -7,7 +7,7 @@
             <li>스트리밍</li>
             <li>TV</li>
             <li>대여</li>
-            <li>극장</li>
+            <li class="choice">극장</li>
           </ul>
         </div>
         <div class="movie-box">
@@ -55,10 +55,10 @@
   export default {
       name: 'Latest',
       data() {
-    return {
+        return {
       movies: [],
-    }
-  },
+        }
+      },
   async fetch() {
     await this.getMovies()
   },
@@ -76,6 +76,11 @@
 }
   </script>
   
-  <style>
-  
+  <style lang="scss"> 
+   .choice{
+    border-radius: 20px;
+    border:none;
+    background-color: #0d253f;
+    color: #90cea1;
+  }
   </style>

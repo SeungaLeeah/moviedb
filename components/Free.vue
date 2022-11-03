@@ -4,7 +4,7 @@
         <div class="section-title">
           <h2>Free To Watch</h2>
           <ul class="section-bar">
-            <li>영화</li>
+            <li class="choice">영화</li>
             <li>TV</li>
           </ul>
         </div>
@@ -70,7 +70,6 @@
         result.data.results.forEach((movie) => {
           this.movies.push(movie)
         })
-        console.log(this.movies)
       },
   },
 }

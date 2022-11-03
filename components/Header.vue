@@ -67,13 +67,14 @@
 export default {
     // eslint-disable-next-line vue/multi-word-component-names, vue/no-reserved-component-names
     name: 'Header',
-
-    methods: {
-        mouseover: function () {
-            this.isOpen = true;
-        },
-        mouseleave: function () {
-            this.isOpen = false;
+    data :function() {
+      return {
+            show: true
+      };
+    },
+    methods:{
+        toggleShow(){
+            this.show = !this.show;
         }
     }
 }
@@ -120,9 +121,7 @@ padding: 0 20px;
           text-decoration: none;
           }
       }
- .isOpen {
-    display: block;
-  }
+
     }
   }
     .custom-right{
@@ -154,5 +153,7 @@ padding: 0 20px;
     color: #0d253f;
   }
 }
- 
+.notShown {
+  visibility: hidden !important;
+}
 </style>

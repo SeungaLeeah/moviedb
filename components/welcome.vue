@@ -7,7 +7,12 @@
     <p>Millions of movies, TV shows and people to discover. Explore now.</p>
     </div>
     <div class="movie-search">
-        <input  class="search-box" type="text" placeholder="영화, TV 프로그램, 인물 검색..."  />
+        <input
+        v-model.lazy="searchInput"
+        type="text"
+        placeholder="영화, TV 프로그램, 인물 검색"
+        class="search-box" 
+        @keyup.enter="$fetch"  />
         <button class="search-btn">Search</button>
     </div>
 </div>
@@ -16,8 +21,29 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     name: 'Welcome',
+    data() {
+    return {
+      searches: [],
+    }
+  },
+  async fetch() {
+    await this.getSearch()
+  },
+  methods: {
+    async getSearch() {
+      const data = axios.get(
+        `https://api.themoviedb.org/3/search/movie?api_key=dca826d7ecad36cf56d8b27692dac7ac&language=en-US&page=1&query=${this.searchInput}`
+      )
+      const result = await data
+      result.data.results.forEach((search) => {
+        this.searches.push(search)
+      })
+      console.log(this.searches)
+    },
+  },
 }
 </script>
 

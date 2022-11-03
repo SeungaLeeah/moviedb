@@ -4,7 +4,7 @@
         <div class="section-title">
           <h2>트렌딩</h2>
           <ul class="section-bar">
-            <li>오늘</li>
+            <li class="choice">오늘</li>
             <li>이번 주</li>
           </ul>
         </div>
