@@ -2,7 +2,6 @@
   <div class="welcome-container">
     <div class="inner-width">
     <div class="background-img">
-        <img src="" alt="">
     <div class="title">
     <h1>Welcome.</h1>
     <p>Millions of movies, TV shows and people to discover. Explore now.</p>
@@ -26,7 +25,8 @@ export default {
 .welcome-container{
     width: 100%;
     .background-img{
-        background-color: gray;
+        background: url(../assets/imgs/welcome.jpg) no-repeat  ;
+        background-size: cover;
         position: relative;
         width: 100%;
         height: 300px;

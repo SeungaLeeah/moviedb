@@ -3,11 +3,53 @@
     <div class="inner-width">
       <div class="header">
       <ul class="text-container">
-        <li><img class="main-logo" src="../assets/imgs/mainlogo.png" alt="mainlogo"/></li>
-          <li>영화</li>
-          <li>TV프로그램</li>
-          <li>인물</li>
-          <li>More</li>
+        <li><img class="mainLogo" src="../assets/imgs/mainlogo.png" alt="mainlogo"/></li>
+          <li
+            @:mouseover="mouseover"
+            @:mouseleave="mouseleave"
+          >
+            영화
+            
+          <ul class=" dropdown" :class="{ isOpen }">
+            <li>인기</li>
+            <li>현재 상영 중</li>
+            <li>개봉 예정</li>
+            <li>높은 평점</li>
+          </ul>
+          </li>
+          <li  
+            @:mouseover="mouseover"
+            @:mouseleave="mouseleave"
+          >
+            TV프로그램
+            <ul class=" dropdown" :class="{ isOpen }">
+              <li>인기</li>
+              <li>오늘 방영</li>
+              <li>TV 방영 중</li>
+              <li>높은 평점</li>
+            </ul>
+          </li>
+          <li
+            @:mouseover="mouseover"
+            @:mouseleave="mouseleave"
+          >
+          인물
+            <ul class=" dropdown" :class="{ isOpen }">
+              <li>인기 인물</li>
+            </ul>
+          </li>
+          <li
+            @:mouseover="mouseover"
+            @:mouseleave="mouseleave"
+          >
+            More
+            <ul class=" dropdown" :class="{ isOpen }">
+              <li>토론 내역</li>
+              <li>기여 랭킹</li>
+              <li>지원</li>
+              <li>API</li>
+            </ul>
+          </li>
       </ul>
       <ul class="custom-right">
           <li><font-awesome-icon icon="fa-solid fa-plus" class="iconB"/></li>
@@ -25,10 +67,19 @@
 export default {
     // eslint-disable-next-line vue/multi-word-component-names, vue/no-reserved-component-names
     name: 'Header',
+
+    methods: {
+        mouseover: function () {
+            this.isOpen = true;
+        },
+        mouseleave: function () {
+            this.isOpen = false;
+        }
+    }
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .header{
 display: flex;
 flex-direction: row;
@@ -38,6 +89,7 @@ font-size: 16px;
 box-sizing: border-box;
 padding: 0 20px;
   .text-container{
+    position: relative;
     display: flex;
     width: 50%;
     flex-direction: row;
@@ -46,11 +98,31 @@ padding: 0 20px;
     li{
       cursor: pointer;
       padding: 0 20px;
-      .main-logo{
+      .mainLogo{
         height: auto;
         width: 155px;
         cursor: pointer;
       } 
+      .dropdown{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        padding: 0;
+        list-style-type: none;
+        background-color: #007db9;
+          li {
+          width: 250px;
+          border-bottom: 1px solid #fff;
+          display: block;
+          padding: 10px;
+          color: #fff;
+          text-decoration: none;
+          }
+      }
+ .isOpen {
+    display: block;
+  }
     }
   }
     .custom-right{

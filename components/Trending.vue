@@ -20,7 +20,7 @@
              alt=""
              />
             <div class="movie-vote-average">
-              <p>{{ movie.vote_average }}</p>
+              <p>{{ movie.vote_average.toFixed(1) }}</p>
             </div>
             </NuxtLink>
           

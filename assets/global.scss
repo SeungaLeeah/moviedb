@@ -53,6 +53,7 @@ a{
       li{
         font-weight: 700;
         padding: 5px 25px;
+        cursor: pointer;
       }
     }
   }
@@ -62,17 +63,6 @@ a{
     height: 385px;
     display: flex;
     overflow-x: scroll;
-    .movie-box::-webkit-scrollbar {
-      width: 10px;
-    }
-    .movie-box::-webkit-scrollbar-track {
-      background: rgba(33, 122, 244, .1);
-    }
-    .movie-box::-webkit-scrollbar-thumb {
-      height: 30%;
-      background: #217af4; 
-      border-radius: 10px;
-    }
     .movie{
       width: 100%;
       display: flex;
@@ -80,11 +70,18 @@ a{
       box-sizing: border-box;
       padding: 0 10px;
       .poster{
-  
+        .movie-vote-average{
+            font-size: 14px;
+            background-color: #01b4e4;
+            width: 20px;
+            padding: 5px 5px;
+            text-align: center;
+            color: white;
+        }
         img{
           width: 140px;
           border: none;
-        border-radius: 7px;
+          border-radius: 7px;
         }
       }
       .movie-info{

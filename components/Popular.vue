@@ -13,8 +13,8 @@
         <div class="movie-box">
           <div  v-for="(movie, index) in movies" :key="index" class="movie">
             <NuxtLink 
-              :to="{ name: 'movies-movieid', 
-              params: { movieid: movie.id } }" 
+              :to="{ name: 'movies-id', 
+              params: { id: movie.id } }" 
               class="poster"
             >
             <img 
@@ -22,14 +22,14 @@
              alt=""
              />
             <div class="movie-vote-average">
-              <p>{{ movie.vote_average }}</p>
+              <p>{{ movie.vote_average.toFixed(1) }}</p>
             </div>
             </NuxtLink>
           
           <div class="movie-info">
             <NuxtLink 
-              :to="{ name: 'movies-movieid', 
-              params: { movieid: movie.id } }" 
+              :to="{ name: 'movies-id', 
+              params: { id: movie.id } }" 
               class="title"
             >
               {{ movie.title }}

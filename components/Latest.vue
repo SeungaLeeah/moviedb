@@ -1,5 +1,5 @@
 <template>
-    <div>
+      <div>
     <div class="inner-width">
         <div class="section-title">
           <h2>최신 예고편</h2>
@@ -22,7 +22,7 @@
              alt=""
              />
             <div class="movie-vote-average">
-              <p>{{ movie.vote_average }}</p>
+              <p>{{ movie.vote_average.toFixed(1) }}</p>
             </div>
             </NuxtLink>
           
@@ -65,18 +65,17 @@
   methods: {
     async getMovies() {
       const data = axios.get(
-        'https://api.themoviedb.org/3/movie/latest?api_key=dca826d7ecad36cf56d8b27692dac7ac&language=en-US'
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=dca826d7ecad36cf56d8b27692dac7ac&language=en-US&page=1`
       )
       const result = await data
       result.data.results.forEach((movie) => {
         this.movies.push(movie)
       })
-      console.log(this.movies)
     },
   },
-  }
+}
   </script>
   
-  <style lang="scss" scoped>
- 
+  <style>
+  
   </style>
