@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/dotenv": "^1.4.1",
     "core-js": "^3.25.3",
     "k-progress": "^1.5.0",
     "nuxt": "^2.15.8",
